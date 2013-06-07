@@ -1,0 +1,46 @@
+package Wind;
+
+public class Windchill {
+private double windSpeed;
+private double temp;
+private double windchill;
+
+public void Windchill()
+{
+  temp = 0.0;
+	windSpeed = 0.0;
+	windchill= 0.0;
+}
+public void setSpeed(double aSpeed)
+{
+	windSpeed= aSpeed;
+}
+public void setTemp(double aTemp)
+{
+	temp=aTemp;
+}
+
+
+public double getWindchill()
+{
+	windchill= (((0.08*(temp-91.4))*((3.71*(Math.sqrt(windSpeed))+(5.81-(0.25*windSpeed)))))+91.4);
+	return windchill;
+}
+
+}
+
+
+package Wind;
+
+public class WindGUI {
+
+
+  public static void main(String[] args) {
+	Windchill chill = new Windchill();
+	chill.setSpeed(10.0);
+	chill.setTemp(105.0);
+	System.out.println(chill.getWindchill());
+
+	}
+
+}
